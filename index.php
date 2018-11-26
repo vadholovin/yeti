@@ -48,17 +48,6 @@ $lots = [
 
 function format_cost($cost) {
     $result = ceil($cost);
-
-    /*
-    if ($result > 1000) {
-        $str_cost = (string) $result;
-        $last_part = substr($str_cost, -3);
-        $first_part = substr($str_cost, 0, -3);
-
-        $result = $first_part . " " . $last_part;
-    }
-    */
-
     $result = number_format($result, 0, "", " ");
     $result .= '<b class="rub">р</b>';
 
@@ -150,7 +139,7 @@ function format_cost($cost) {
             </select>
         </div>
         <ul class="lots__list">
-        <?php foreach($lots as $index => $lot) : ?>
+        <?php foreach($lots as $lot) : ?>
             <li class="lots__item lot">
                 <div class="lot__image">
                     <img src="img/<?=$lot["image"];?>" width="350" height="260" alt="">
@@ -196,7 +185,7 @@ function format_cost($cost) {
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-        <?php foreach ($categories as $index => $category) : ?>
+        <?php foreach ($categories as $category) : ?>
             <li class="nav__item">
                 <a href="all-lots.html"><?=$category; ?></a>
             </li>
